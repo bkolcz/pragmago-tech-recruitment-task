@@ -9,4 +9,5 @@
 /vendor/
 /.idea/
 /.vscode/
+/tmp/
 ###< symfony/framework-bundle ###
