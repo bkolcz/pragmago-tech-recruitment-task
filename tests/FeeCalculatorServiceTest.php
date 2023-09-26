@@ -4,7 +4,7 @@ namespace App\Tests;
 
 use App\Fee\FeeCalculatorService;
 use PHPUnit\Framework\TestCase;
-use PragmaGoTech\Interview\Model\LoanProposal;
+use App\Model\LoanProposal;
 
 class FeeCalculatorServiceTest extends TestCase
 {
@@ -51,6 +51,10 @@ class FeeCalculatorServiceTest extends TestCase
             array(18000, 360),
             array(19000, 380),
             array(20000, 400),
+            array(1021, 54),
+            array(2021, 94),
+            array(900, -1),
+            array(20020, -1),
         );
     }
 
@@ -81,6 +85,10 @@ class FeeCalculatorServiceTest extends TestCase
             array(18000, 720),
             array(19000, 760),
             array(20000, 800),
+            array(1021, 74),
+            array(2021, 104),
+            array(900, -1),
+            array(20020, -1),
         );
     }
 }

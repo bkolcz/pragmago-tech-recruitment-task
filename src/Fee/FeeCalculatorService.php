@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Fee;
 
-use PragmaGoTech\Interview\Fee\FeeCalculator;
-use PragmaGoTech\Interview\Model\LoanProposal;
+use App\Fee\FeeCalculator;
+use App\Model\LoanProposal;
 
 class FeeCalculatorService implements FeeCalculator
 {
@@ -44,7 +44,8 @@ class FeeCalculatorService implements FeeCalculator
     {
         $fee = (float) $amount * (float) $interestRate;
         $total = (float) $amount + (float) $fee;
-        $reminder = (float) $total % 5.0;
-        return round($fee + $reminder, 2);
+        $reminder = fmod($total, 5.0);
+        $fee = (float) $reminder > 0.0 ? (float) $fee + (5.0 - (float) $reminder) : (float) $fee;
+        return round($fee, 0);
     }
 }
