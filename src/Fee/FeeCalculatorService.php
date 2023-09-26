@@ -46,6 +46,6 @@ class FeeCalculatorService implements FeeCalculator
         $total = (float) $amount + (float) $fee;
         $reminder = fmod($total, 5.0);
         $fee = (float) $reminder > 0.0 ? (float) $fee + (5.0 - (float) $reminder) : (float) $fee;
-        return round($fee, 0);
+        return round($fee, 2);
     }
 }

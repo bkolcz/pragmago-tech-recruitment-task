@@ -55,6 +55,7 @@ class FeeCalculatorServiceTest extends TestCase
             array(2021, 94),
             array(900, -1),
             array(20020, -1),
+            array(2021.25, 93.75),
         );
     }
 
@@ -89,6 +90,7 @@ class FeeCalculatorServiceTest extends TestCase
             array(2021, 104),
             array(900, -1),
             array(20020, -1),
+            array(2021.25, 103.75),
         );
     }
 }
